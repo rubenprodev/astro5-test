@@ -1,0 +1,53 @@
+---
+import { ClientRouter } from "astro:transitions";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en" class="scheme-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- <meta name="generator" content={Astro.generator} /> -->
+    <title>Dev Books</title>
+    <ClientRouter />
+  </head>
+  <body class="p-20">
+    <div>
+      <main>
+        <h1 class="text-center text-7xl font-extrabold mb-12">
+          <a class="block" href="/">Dev 💻 books</a>
+        </h1>
+        <nav>
+          <ul class="flex space-x-4">
+            <li>
+              <a href="/books" class="text-xl font-bold block">Books</a>
+            </li>
+          </ul>
+        </nav>
+        <section aria-label="main-content">
+          <slot />
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .scheme-dark {
+    background-color: #1a202c;
+    color: #e2e8f0;
+  }
+  .scheme-light {
+    background-color: #f7fafc;
+    color: #1a202c;
+  }
+</style>
